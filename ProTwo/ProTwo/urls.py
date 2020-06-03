@@ -1,4 +1,4 @@
-"""first_project URL Configuration
+"""ProTwo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from django.conf.urls import include
-from first_app import views
+from AppTwo import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     # path('index/',views.index,name="index"),
     url(r'^$', views.index, name='index'),
-    url(r'^mynewextension/',include('first_app.urls')),
+    url(r'^help/', include('AppTwo.urls')),
+    url(r'^show/', include('AppTwo.urls')),
     url(r'^$admin/', admin.site.urls),
 
 ]
