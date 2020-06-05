@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Demo</title>
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>First you add new user:</h1>
+        <form method="POST">
+            {{ form.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit"/>
+        </form>
+    </div>
+   
+
+    <h1>Here are your all users</h1>
+    <ol>
+       {% for user in users_records %}
+        <li>User Info
+            <ul>
+                <li>First Name: {{user.first_name}}</li>
+                <li>Last Name: {{user.last_name}}</li>
+                <li>Email: {{user.email}}</li>
+            </ul>
+        </li>
+        {%  endfor %}
+    </ol>
+
+</body>
+</html>

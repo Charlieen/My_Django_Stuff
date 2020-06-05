@@ -24,6 +24,7 @@ urlpatterns = [
     # path('index/',views.index,name="index"),
     url(r'^$', views.index, name='index'),
     url(r'^mynewextension/',include('first_app.urls')),
-    url(r'^$admin/', admin.site.urls),
+    # url(r'^$admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 
 ]
